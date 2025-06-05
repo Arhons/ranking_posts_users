@@ -33,7 +33,7 @@ def batch_load_sql(query: str) -> pd.DataFrame:
     return pd.concat(chunks, ignore_index=True)
 
 def get_model_path(path: str) -> str:
-    if os.environ.get("IS_LMS") == "1":  # проверяем где выполняется код в лмс, или локально. Немного магии
+    if os.environ.get("IS_LMS") == "1":
         MODEL_PATH = '/workdir/user_input/model'
     else:
         MODEL_PATH = path
