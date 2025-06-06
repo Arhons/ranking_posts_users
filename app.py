@@ -71,7 +71,7 @@ def load_features():
     return [liked_posts, posts_features, user_features]
 
 def load_models():
-    model_path = get_model_path("C:/Users/Mikhail/Downloads/catboost_model")
+    model_path = get_model_path(os.path.join("model", "catboost_model"))
     loaded_model = CatBoostClassifier()
     loaded_model.load_model(model_path)
     return loaded_model
